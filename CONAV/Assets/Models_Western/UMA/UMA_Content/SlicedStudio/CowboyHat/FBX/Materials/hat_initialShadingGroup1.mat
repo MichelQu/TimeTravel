@@ -5,12 +5,7 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-<<<<<<< HEAD
   m_PrefabInternal: {fileID: 0}
-=======
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> 0fa8e7fa417215911d99500bce8711754d194aa8
   m_Name: hat_initialShadingGroup1
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 

@@ -12,8 +12,7 @@ public class LaserPointer : MonoBehaviour {
     }
 
     // Is the transform of [CameraRig].
-    //private Transform cameraRigTransform;
-    public GameObject cameraBase;
+    public Transform cameraRigTransform;
     // Stores a reference to the teleport reticle prefab.
     public GameObject teleportReticlePrefab;
     // A reference to an instance of the reticle.
@@ -22,6 +21,8 @@ public class LaserPointer : MonoBehaviour {
     private Transform teleportReticleTransform;
     // Stores a reference to the player’s head (the camera).
     public Transform headTransform;
+    // Is the reticle offset from the floor, so there’s no “Z-fighting” with other surfaces.
+    public Vector3 teleportReticleOffset;
     // Is a layer mask to filter the areas on which teleports are allowed.
     public LayerMask teleportMask;
     // Is set to true when a valid teleport location is found.
@@ -30,7 +31,6 @@ public class LaserPointer : MonoBehaviour {
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-        //cameraRigTransform = transform.parent;
     }
     // This is a reference to the Laser’s prefab.
     public GameObject laserPrefab;
@@ -64,14 +64,12 @@ public class LaserPointer : MonoBehaviour {
         // Hide the reticle.
         reticle.SetActive(false);
         // Calculate the difference between the positions of the camera rig’s center and the player’s head.
-        //Vector3 difference = cameraRigTransform.position - headTransform.position;
+        Vector3 difference = cameraRigTransform.position - headTransform.position;
         // eset the y-position for the above difference to 0, because the calculation doesn’t consider the vertical position of the player’s head.
-        //difference.y = 0;
+        difference.y = 0;
         // Move the camera rig to the position of the hit point and add the calculated difference. 
         // Without the difference, the player would teleport to an incorrect location.
-        //cameraRigTransform.position = hitPoint + difference;
-        cameraBase.transform.position = new Vector3(hitPoint.x,cameraBase.transform.position.y,hitPoint.z);
-
+        cameraRigTransform.position = hitPoint + difference;
     }
     private void Start()
     {
@@ -100,7 +98,7 @@ public class LaserPointer : MonoBehaviour {
                 // Show the teleport reticle.
                 reticle.SetActive(true);
                 // Move the reticle to where the raycast hit with the addition of an offset to avoid Z-fighting.
-                teleportReticleTransform.position = hitPoint + 0.05f*Vector3.up;
+                teleportReticleTransform.position = hitPoint + teleportReticleOffset;
                 // Set shouldTeleport to true to indicate the script found a valid position for teleporting.
                 shouldTeleport = true;
             }

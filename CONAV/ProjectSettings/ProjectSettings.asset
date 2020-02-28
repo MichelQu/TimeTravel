@@ -4,11 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-<<<<<<< HEAD
   productGUID: e4f7b5002838f854b86f65f66dd9ba5b
-=======
-  productGUID: 5b4ac39fa3dc75b46974c6b9330d5f50
->>>>>>> 0fa8e7fa417215911d99500bce8711754d194aa8
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -400,11 +396,7 @@ PlayerSettings:
   switchAllowsVideoCapturing: 1
   switchAllowsRuntimeAddOnContentInstall: 0
   switchDataLossConfirmation: 0
-<<<<<<< HEAD
   switchSupportedNpadStyles: 3
-=======
-  switchSupportedNpadStyles: 6
->>>>>>> 0fa8e7fa417215911d99500bce8711754d194aa8
   switchNativeFsCacheSize: 32
   switchIsHoldTypeHorizontal: 0
   switchSupportedNpadCount: 8
@@ -627,11 +619,7 @@ PlayerSettings:
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.4
-<<<<<<< HEAD
   apiCompatibilityLevel: 2
-=======
-  apiCompatibilityLevel: 3
->>>>>>> 0fa8e7fa417215911d99500bce8711754d194aa8
   cloudProjectId: 
   projectName: 
   organizationId: 

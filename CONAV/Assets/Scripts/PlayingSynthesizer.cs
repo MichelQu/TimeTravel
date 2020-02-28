@@ -13,10 +13,7 @@ public class PlayingSynthesizer : MonoBehaviour {
     public AudioClip Melody;
     private bool musicIsPlaying = false;
     public Cassette cassette;
-<<<<<<< HEAD
     public AudioSource walkman;
-=======
->>>>>>> 0fa8e7fa417215911d99500bce8711754d194aa8
 
     private AudioSource asr;
 
@@ -37,21 +34,14 @@ public class PlayingSynthesizer : MonoBehaviour {
         if (timer > TimeLimit)
         {
             asr.Stop();
-<<<<<<< HEAD
             walkman.Play();
-=======
->>>>>>> 0fa8e7fa417215911d99500bce8711754d194aa8
             timerMusic = 0;
             asr.clip = FirstNote;
             TimerIsRunning = false;
             musicIsPlaying = false;
             timer = 0.0f;
         }
-<<<<<<< HEAD
         if (asr.clip==Melody && timerMusic > asr.clip.length)
-=======
-        if (timerMusic > asr.clip.length)
->>>>>>> 0fa8e7fa417215911d99500bce8711754d194aa8
         {
             //Faire poper la cassette
             cassette.gameObject.SetActive(true);
@@ -76,10 +66,7 @@ public class PlayingSynthesizer : MonoBehaviour {
                     timerMusic = 0;
                     asr.Play();
                     musicIsPlaying = true;
-<<<<<<< HEAD
                     walkman.Stop();
-=======
->>>>>>> 0fa8e7fa417215911d99500bce8711754d194aa8
                 }
                 timer = 0.0f;
             }
