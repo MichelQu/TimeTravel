@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class LaserPointer : MonoBehaviour {
 
     private SteamVR_TrackedObject trackedObj;
+    public SteamVR_Action_Boolean Movement;
+    public SteamVR_Input_Sources handType;
 
-    private SteamVR_Controller.Device Controller
-    {
-        get { return SteamVR_Controller.Input((int)trackedObj.index); }
-    }
+
+    //private SteamVR_Controller.Device Controller
+    //{
+    //    get { return SteamVR_Controller.Input((int)trackedObj.index); }
+    //}
 
     // Is the transform of [CameraRig].
     public Transform cameraRigTransform;
@@ -86,7 +90,8 @@ public class LaserPointer : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         // If the touchpad is held down…
-        if (Controller.GetPress(SteamVR_Controller.ButtonMask.Touchpad))
+        //if (Controller.GetPress(SteamVR_Controller.ButtonMask.Touchpad))
+        if (Movement.GetStateDown(handType))
         {
             RaycastHit hit;
 
@@ -108,7 +113,8 @@ public class LaserPointer : MonoBehaviour {
             laser.SetActive(false);
         }
         // Teleports the player if the touchpad is released and there’s a valid teleport position.
-        if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad) && shouldTeleport)
+        //if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad) && shouldTeleport)
+        if (Movement.GetStateUp(handType))
         {
             Teleport();
         }

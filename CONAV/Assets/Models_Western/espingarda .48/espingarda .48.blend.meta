@@ -1,84 +1,236 @@
 fileFormatVersion: 2
 guid: ba31558a0b7d6d64ab9dd84e1cbe2728
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: arma_inventario
-    100002: Circle
-    100004: Cube_001
-    100006: Cube_002
-    100008: Cube_003
-    100010: Cylinder_011
-    100012: Cylinder_012
-    100014: //RootNode
-    100016: Plane_000
-    100018: Plane_001
-    100020: Plane_008
-    100022: Plane_010
-    100024: Plane_011
-    400000: arma_inventario
-    400002: Circle
-    400004: Cube_001
-    400006: Cube_002
-    400008: Cube_003
-    400010: Cylinder_011
-    400012: Cylinder_012
-    400014: //RootNode
-    400016: Plane_000
-    400018: Plane_001
-    400020: Plane_008
-    400022: Plane_010
-    400024: Plane_011
-    2100000: madeira__Grama_Textura_png
-    2100002: ferro_
-    2100004: protecao_gatilho
-    2100006: gatilho
-    2100008: cano
-    2100010: Material_008
-    2100012: Material_007
-    2100014: Material_005
-    2100016: Material_003
-    2300000: arma_inventario
-    2300002: Circle
-    2300004: Cube_001
-    2300006: Cube_002
-    2300008: Cube_003
-    2300010: Cylinder_011
-    2300012: Cylinder_012
-    2300014: Plane_000
-    2300016: Plane_001
-    2300018: Plane_008
-    2300020: Plane_010
-    2300022: Plane_011
-    3300000: arma_inventario
-    3300002: Circle
-    3300004: Cube_001
-    3300006: Cube_002
-    3300008: Cube_003
-    3300010: Cylinder_011
-    3300012: Cylinder_012
-    3300014: Plane_000
-    3300016: Plane_001
-    3300018: Plane_008
-    3300020: Plane_010
-    3300022: Plane_011
-    4300000: Plane_000
-    4300002: Cube_001
-    4300004: arma_inventario
-    4300006: Plane_011
-    4300008: Plane_010
-    4300010: Cube_003
-    4300012: Cube_002
-    4300014: Circle
-    4300016: Cylinder_012
-    4300018: Cylinder_011
-    4300020: Plane_008
-    4300022: Plane_001
-    7400000: Default Take
-    9500000: //RootNode
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: arma_inventario
+  - first:
+      1: 100002
+    second: Circle
+  - first:
+      1: 100004
+    second: Cube_001
+  - first:
+      1: 100006
+    second: Cube_002
+  - first:
+      1: 100008
+    second: Cube_003
+  - first:
+      1: 100010
+    second: Cylinder_011
+  - first:
+      1: 100012
+    second: Cylinder_012
+  - first:
+      1: 100014
+    second: //RootNode
+  - first:
+      1: 100016
+    second: Plane_000
+  - first:
+      1: 100018
+    second: Plane_001
+  - first:
+      1: 100020
+    second: Plane_008
+  - first:
+      1: 100022
+    second: Plane_010
+  - first:
+      1: 100024
+    second: Plane_011
+  - first:
+      4: 400000
+    second: arma_inventario
+  - first:
+      4: 400002
+    second: Circle
+  - first:
+      4: 400004
+    second: Cube_001
+  - first:
+      4: 400006
+    second: Cube_002
+  - first:
+      4: 400008
+    second: Cube_003
+  - first:
+      4: 400010
+    second: Cylinder_011
+  - first:
+      4: 400012
+    second: Cylinder_012
+  - first:
+      4: 400014
+    second: //RootNode
+  - first:
+      4: 400016
+    second: Plane_000
+  - first:
+      4: 400018
+    second: Plane_001
+  - first:
+      4: 400020
+    second: Plane_008
+  - first:
+      4: 400022
+    second: Plane_010
+  - first:
+      4: 400024
+    second: Plane_011
+  - first:
+      21: 2100000
+    second: madeira__Grama_Textura_png
+  - first:
+      21: 2100002
+    second: ferro_
+  - first:
+      21: 2100004
+    second: protecao_gatilho
+  - first:
+      21: 2100006
+    second: gatilho
+  - first:
+      21: 2100008
+    second: cano
+  - first:
+      21: 2100010
+    second: Material_008
+  - first:
+      21: 2100012
+    second: Material_007
+  - first:
+      21: 2100014
+    second: Material_005
+  - first:
+      21: 2100016
+    second: Material_003
+  - first:
+      23: 2300000
+    second: arma_inventario
+  - first:
+      23: 2300002
+    second: Circle
+  - first:
+      23: 2300004
+    second: Cube_001
+  - first:
+      23: 2300006
+    second: Cube_002
+  - first:
+      23: 2300008
+    second: Cube_003
+  - first:
+      23: 2300010
+    second: Cylinder_011
+  - first:
+      23: 2300012
+    second: Cylinder_012
+  - first:
+      23: 2300014
+    second: Plane_000
+  - first:
+      23: 2300016
+    second: Plane_001
+  - first:
+      23: 2300018
+    second: Plane_008
+  - first:
+      23: 2300020
+    second: Plane_010
+  - first:
+      23: 2300022
+    second: Plane_011
+  - first:
+      33: 3300000
+    second: arma_inventario
+  - first:
+      33: 3300002
+    second: Circle
+  - first:
+      33: 3300004
+    second: Cube_001
+  - first:
+      33: 3300006
+    second: Cube_002
+  - first:
+      33: 3300008
+    second: Cube_003
+  - first:
+      33: 3300010
+    second: Cylinder_011
+  - first:
+      33: 3300012
+    second: Cylinder_012
+  - first:
+      33: 3300014
+    second: Plane_000
+  - first:
+      33: 3300016
+    second: Plane_001
+  - first:
+      33: 3300018
+    second: Plane_008
+  - first:
+      33: 3300020
+    second: Plane_010
+  - first:
+      33: 3300022
+    second: Plane_011
+  - first:
+      43: 4300000
+    second: Plane_000
+  - first:
+      43: 4300002
+    second: Cube_001
+  - first:
+      43: 4300004
+    second: arma_inventario
+  - first:
+      43: 4300006
+    second: Plane_011
+  - first:
+      43: 4300008
+    second: Plane_010
+  - first:
+      43: 4300010
+    second: Cube_003
+  - first:
+      43: 4300012
+    second: Cube_002
+  - first:
+      43: 4300014
+    second: Circle
+  - first:
+      43: 4300016
+    second: Cylinder_012
+  - first:
+      43: 4300018
+    second: Cylinder_011
+  - first:
+      43: 4300020
+    second: Plane_008
+  - first:
+      43: 4300022
+    second: Plane_001
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  - first:
+      74: -623603649343465320
+    second: Scene
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -111,6 +263,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -118,18 +271,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -138,10 +292,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -151,13 +305,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

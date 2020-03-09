@@ -1,17 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class ControllerGrabObject : MonoBehaviour {
 
     //A reference to the object being tracked. In this case, a controller.
     private SteamVR_TrackedObject trackedObj;
+    public GameObject controller;
+    public SteamVR_Action_Boolean Movement;
+    public SteamVR_Input_Sources handType;
+
 
     //A device property to provide easy access to the controller. It uses the tracked object’s index to return the controller’s input.
-    private SteamVR_Controller.Device Controller
-    {
-        get { return SteamVR_Controller.Input((int)trackedObj.index); }
-    }
+    // private SteamVR_Controller.Device Controller
+    //{
+    //    get { return SteamVR_Controller.Input((int)trackedObj.index); }
+    //}
 
     void Awake()
     {
@@ -85,8 +90,8 @@ public class ControllerGrabObject : MonoBehaviour {
             GetComponent<FixedJoint>().connectedBody = null;
             Destroy(GetComponent<FixedJoint>());
             // Add the speed and rotation of the controller when the player releases the object, so the result is a realistic arc.
-            objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity;
-            objectInHand.GetComponent<Rigidbody>().angularVelocity = Controller.angularVelocity;
+            objectInHand.GetComponent<Rigidbody>().velocity = controller.GetComponent<Rigidbody>().velocity;
+            objectInHand.GetComponent<Rigidbody>().angularVelocity = controller.GetComponent<Rigidbody>().angularVelocity;
         }
         // Remove the reference to the formerly attached object.
         objectInHand = null;
@@ -95,7 +100,7 @@ public class ControllerGrabObject : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         // When the player squeezes the trigger and there’s a potential grab target, this grabs it.
-        if (Controller.GetHairTriggerDown())
+        if (Movement.GetStateDown(handType))
         {
             if (collidingObject)
             {
@@ -104,7 +109,7 @@ public class ControllerGrabObject : MonoBehaviour {
         }
 
         // If the player releases the trigger and there’s an object attached to the controller, this releases it.
-        if (Controller.GetHairTriggerUp())
+        if (Movement.GetStateUp(handType))
         {
             if (objectInHand)
             {
