@@ -8,11 +8,11 @@ using Valve.VR;
 public class ControllerGrabObject : MonoBehaviour {
 
     //A reference to the object being tracked. In this case, a controller.
-    private SteamVR_TrackedObject trackedObj;
     public GameObject controller;
     public SteamVR_Action_Boolean Movement;
     public SteamVR_Input_Sources handType;
 
+    private SteamVR_TrackedObject trackedObj;
 
     //A device property to provide easy access to the controller. It uses the tracked object’s index to return the controller’s input.
     // private SteamVR_Controller.Device Controller
@@ -25,9 +25,20 @@ public class ControllerGrabObject : MonoBehaviour {
         //reference to the SteamVR_TrackedObject
         trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
+
+    void Start()
+    {
+        SphereCollider collider = controller.AddComponent<SphereCollider>();
+        collider.radius = 0.15f;
+        collider.isTrigger = true;
+        Rigidbody rbody = controller.AddComponent<Rigidbody>();
+        rbody.isKinematic = true;
+
+    }
+
     // Stores the GameObject that the trigger is currently colliding with, so you have the ability to grab the object.
     private GameObject collidingObject;
-    // Serves as a reference to the GameObject that the player is currently grabbing.   
+    // Serves as a reference to the GameObject that the player is currently grabbing.
     private GameObject objectInHand;
 
     private void SetCollidingObject(Collider col)
@@ -44,12 +55,14 @@ public class ControllerGrabObject : MonoBehaviour {
     // When the trigger collider enters another, this sets up the other collider as a potential grab target.
     public void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Collisionnnnnnnnn");
         SetCollidingObject(other);
     }
 
     // Ensures that the target is set when the player holds a controller over an object for a while. Without this, the collision may fail or become buggy.
     public void OnTriggerStay(Collider other)
     {
+                Debug.Log("Collisionnnnnnnnn3213213132");
         SetCollidingObject(other);
     }
 
@@ -101,12 +114,15 @@ public class ControllerGrabObject : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        Debug.Log(collidingObject?.name ?? "non");
         // When the player squeezes the trigger and there’s a potential grab target, this grabs it.
         if (Movement.GetStateDown(handType))
         {
             if (collidingObject)
             {
                 GrabObject();
+            } else {
+                Debug.Log("Got input, but no colliding object");
             }
         }
 
