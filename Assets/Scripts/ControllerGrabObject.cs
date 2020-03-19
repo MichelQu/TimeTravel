@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
+// 2 - Ce script gère les contrôles et les interactions que possède l'utilisateur avec les controllers du casque.
+
 public class ControllerGrabObject : MonoBehaviour {
 
     //A reference to the object being tracked. In this case, a controller.

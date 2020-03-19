@@ -2,40 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Zone
-{
-    A,
-    B,
-    C
-}
+// 2 - Ce script permet d'attribuer un entier au différent élément dans cette liste.
+// Temporalité Western = A --> 0
+// Temporalité Année 1980 = B --> 1
+// Temporalité Année 2050 = C --> 2
+public enum Zone { A, B, C }
 
+// 2 - Ce script sert à gérer les différentes temporalités et les transitions entre les différentes temporalités.
 public class ZoneManager : MonoBehaviour
 {
-    public Zone zoneActuelle = Zone.B;
+    public Zone zoneActuelle = Zone.B; // 2 - La temporalité des années 80, la temporalité de base
 
-    //on se place dans le cas ou les plateaux sont disposes dans l ordre A B C selon x
+    //on se place dans le cas ou les plateaux sont disposés dans l ordre A B C selon x
     public Transform posA, posB, posC;
-    public GameObject[] obj; //objet a deplacer, par exemple une sphere
 
-    //distance entre les 2 plateaux A et B (positive)
+    // 2 - Listes des objets qui se déplaceront lors des changements de temporalité.
+    // TODO :
+    // On pourrait utiliser un tag pour identifier tous les objets pour automatiser le code
+    // qui se déplaceront ou en instanciant les objets en tant que fils d'un autre gameObject.
+    public GameObject[] obj;
+
+    // Distance entre les 2 plateaux A et B (positive)
     Vector3 translationAB;
-    //distance entre les 2 plateaux A et C (positive)
+    // Distance entre les 2 plateaux A et C (positive)
     Vector3 translationAC;
-    //distance entre les 2 plateaux B et C (positive)
+    // Distance entre les 2 plateaux B et C (positive)
     Vector3 translationBC;
 
     public void Start()
     {
-        //distance entre les 2 plateaux A et B (positive)
+        // On calcule certaines distances de base.
+        // Distance entre les 2 plateaux A et B (positive)
         translationAB = posB.position - posA.position;
-        //distance entre les 2 plateaux A et C (positive)
+        // Distance entre les 2 plateaux A et C (positive)
         translationAC = posC.position - posA.position;
-        //distance entre les 2 plateaux B et C (positive)
+        // Distance entre les 2 plateaux B et C (positive)
         translationBC = posC.position - posB.position;
     }
 
     public void GoToA()
     {
+        // 2 - On se déplace dans la zone A selon les différentes zones 
         foreach (GameObject objet in obj)
         {
             if (zoneActuelle == Zone.B)
@@ -53,6 +60,7 @@ public class ZoneManager : MonoBehaviour
 
     public void GoToB()
     {
+        // 2 - On se déplace dans la zone B selon les différentes zones 
         foreach (GameObject objet in obj)
         {
             if (zoneActuelle == Zone.A)
@@ -74,6 +82,7 @@ public class ZoneManager : MonoBehaviour
 
     public void GoToC()
     {
+        // 2 - On se déplace dans la zone C selon les différentes zones 
         foreach (GameObject objet in obj)
         {
             if (zoneActuelle == Zone.A)

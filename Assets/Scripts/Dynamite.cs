@@ -2,36 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// 2 - Ce script gère la classe Dynamite et les méthodes liées à cette classe.
+
 public class Dynamite : MonoBehaviour
 {
-	public ParticleSystem fuseEffect;
-	public string explodeOnTag;
-	public GameObject explosionEffect;
-	private bool fuseOn = false;
-	private Vector3 spawnLocation;
+	public ParticleSystem fuseEffect; // 2 - Variable de l'effet de particule
+	public string explodeOnTag; // 2 - Le tag de l'objet sur lequel la dynamite va exploser
+    public GameObject explosionEffect;
+    private bool fuseOn = false; // 2 - Si l'effect Particule est activé
+    private Vector3 spawnLocation; // 2 - Le lieu de l'apparition de la dynamite
 
-	private void Start()
+    private void Start()
 	{
 		spawnLocation = transform.position;
 	}
 
 	/// <summary>
-	/// A appeler quand le joueur saisit l'objet
+	/// À appeler quand le joueur saisit l'objet
 	/// </summary>
+
+    // 2 - Cette fonction va lancer l'apparition de particule lorsqu'on attrape la dynamite 
 	public void Grab()
-	{
+    {
 		fuseEffect.Play();
 		fuseOn = true;
 	}
 
 	public void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.CompareTag(explodeOnTag))
+        // 2 - Si collision avec le bon objet
+        if (collision.gameObject.CompareTag(explodeOnTag))
 		{
+            // 2 - Ça explose
 			Explode();
+            // 2 - On récupère la composante Fracturable du parent de l'objet qui collisionne
 			Fracturable fracturable = collision.transform.parent.GetComponent<Fracturable>();
+
 			if (fracturable != null)
 			{
+                // 2 - On lance la méthode qui lance la fracture.
 				fracturable.Fracture();
 			}
 		}
@@ -39,9 +48,13 @@ public class Dynamite : MonoBehaviour
 
 	public void Explode()
 	{
-		Debug.Log("BOOM !");
-		GameObject exp = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-		Destroy(exp, 5);
+        // 2 - Fonction crée l'explosion
+        Debug.Log("BOOM !");
+        // 2 - Crée l'effet d'explosion
+        GameObject exp = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        // 2 - On enlève cet effet au bout de 5s
+        Destroy(exp, 5);
+        // 2 - J'ai pas compris la suite
 		Instantiate(gameObject, spawnLocation, Quaternion.identity);
 		Destroy(gameObject);
 	}
