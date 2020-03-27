@@ -54,7 +54,7 @@ public class Dynamite : MonoBehaviour
         GameObject exp = Instantiate(explosionEffect, transform.position, Quaternion.identity);
         // 2 - On enlève cet effet au bout de 5s
         Destroy(exp, 5);
-        // 2 - J'ai pas compris la suite
+        // 2 - On respawn la dynamite
 		Instantiate(gameObject, spawnLocation, Quaternion.identity);
 		Destroy(gameObject);
 	}
