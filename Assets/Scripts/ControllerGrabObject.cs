@@ -55,14 +55,12 @@ public class ControllerGrabObject : MonoBehaviour {
     // When the trigger collider enters another, this sets up the other collider as a potential grab target.
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collisionnnnnnnnn");
         SetCollidingObject(other);
     }
 
     // Ensures that the target is set when the player holds a controller over an object for a while. Without this, the collision may fail or become buggy.
     public void OnTriggerStay(Collider other)
     {
-                Debug.Log("Collisionnnnnnnnn3213213132");
         SetCollidingObject(other);
     }
 
@@ -114,7 +112,7 @@ public class ControllerGrabObject : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        Debug.Log(collidingObject?.name ?? "non");
+        //Debug.Log(collidingObject?.name ?? "non");
         // When the player squeezes the trigger and there’s a potential grab target, this grabs it.
         if (Movement.GetStateDown(handType))
         {
