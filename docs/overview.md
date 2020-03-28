@@ -154,6 +154,5 @@ Le script 80s/Drawer_constraint restreint la position du tiroir selon l'axe X ju
 ## Fichiers de test qui peuvent être ignorés (et supprimés)
 
 * ViveControllerInputTest
-* grabou
 
 Pour les codes mis en commentaire, et les commentaires, à vous de juger.
