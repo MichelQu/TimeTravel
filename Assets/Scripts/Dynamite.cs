@@ -28,15 +28,15 @@ public class Dynamite : MonoBehaviour
 		fuseOn = true;
 	}
 
-	public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
 	{
-        // 2 - Si collision avec le bon objet
-        if (collision.gameObject.CompareTag(explodeOnTag))
+		// 2 - Si collision avec le bon objet
+		if (other.gameObject.CompareTag(explodeOnTag))
 		{
             // 2 - Ça explose
 			Explode();
             // 2 - On récupère la composante Fracturable du parent de l'objet qui collisionne
-			Fracturable fracturable = collision.transform.parent.GetComponent<Fracturable>();
+			Fracturable fracturable = other.GetComponent<Fracturable>();
 
 			if (fracturable != null)
 			{
@@ -52,8 +52,8 @@ public class Dynamite : MonoBehaviour
         Debug.Log("BOOM !");
         // 2 - Crée l'effet d'explosion
         GameObject exp = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-        // 2 - On enlève cet effet au bout de 5s
-        Destroy(exp, 5);
+        // 2 - On enlève cet effet au bout de 3s
+        Destroy(exp, 3);
         // 2 - On respawn la dynamite
 		Instantiate(gameObject, spawnLocation, Quaternion.identity);
 		Destroy(gameObject);
