@@ -15,6 +15,7 @@ public class Dynamite : MonoBehaviour
     private void Start()
 	{
 		spawnLocation = transform.position;
+		Invoke("Grab", 2f);
 	}
 
 	/// <summary>
